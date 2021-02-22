@@ -6,8 +6,8 @@ import (
 )
 
 func main() {
+	log.Print("Starting web-server on port 8080...")
 	fs := http.FileServer(http.Dir("assets/static/"))
-
-	// start HTTP server with `http.DefaultServeMux` handler
-	log.Fatal(http.ListenAndServe(":8080", fs))
+	err := http.ListenAndServe(":8080", fs)
+	log.Fatalf("[ERROR] '%#v'", err)
 }

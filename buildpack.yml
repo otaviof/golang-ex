@@ -1,0 +1,9 @@
+---
+go:
+  version: 1.15.*
+  targets:
+    - ./
+  build:
+    flags:
+      - -mod=vendor
+      - -v
